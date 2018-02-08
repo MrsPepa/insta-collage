@@ -10,7 +10,8 @@ a {
 }
 /*ajuste de columnas*/
 .uno,
-.col1 {
+.dos,
+.cinco {
   padding-right: 0;
 }
 .dos {
@@ -19,12 +20,17 @@ a {
 .tres, .cuatro {
   padding-right: 3px;
 }
+.uno,
+.tres,
+.cuatro,
 .cinco,
 .col4 {
   padding-left: 0;
 }
+.col1,
 .col2,
-.col3 {
+.col3,
+.col4 {
   padding: 0;
 }
 /*contendor collage*/
