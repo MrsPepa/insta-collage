@@ -13,3 +13,4 @@ function drop(event) {
   var id_foto = event.dataTransfer.getData('text');
   event.target.appendChild(document.getElementById(id_foto));
 }
+//Home LOG IN

@@ -116,9 +116,15 @@ background: linear-gradient(to bottom right, teal , violet); /* Standard syntax 
 }
 /*logo*/
 .logo {
-
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
 }
 /*input's y boton*/
+.ingresar {
+
+}
 #user,
 #password {
   width: 100%;
@@ -156,6 +162,17 @@ background: linear-gradient(to bottom right, teal , violet); /* Standard syntax 
   outline: none;
   border-radius: 6px;
 }
+.facebook {
+  background-color: rgba(0,0,0,0);
+  width: 100%;
+  height: 3em;
+  margin-bottom: 1em;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
 /*estilo input*/
 ::-webkit-input-placeholder {
   color: #fff;
@@ -187,4 +204,17 @@ background: linear-gradient(to bottom right, teal , violet); /* Standard syntax 
   display: inline-block;
   font-size: 12px;
   font-weight: 400;
+}
+/*footer*/
+#registrar {
+  background-color: rgba(225, 255, 255, 0.2);
+  border-top: 1px solid #fff;
+  height: 3.7em;
+  padding-top: 1em;
+  margin-top: 1.5em;
+}
+/*row en conflicto*/
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
