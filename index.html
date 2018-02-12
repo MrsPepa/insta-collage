@@ -9,6 +9,26 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body id="home">
+  <!--firebase SDK-->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: '753020794889244',
+      cookie: true,
+      xfbml: true,
+      version: 'v2.12'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
   <section class="container">
     <div class="row"><!--seleccion de idioma-->
@@ -38,7 +58,7 @@
 
     <div class="row"><!--iniciar sesión botón-->
       <div class="col-xs-12">
-        <button class="inactive" id="signIn" onclick="location.href='collage.html';">Iniciar sesión</button>
+        <button class="inactive" id="signIn" ">Iniciar sesión</button>
         <p>¿Ha olvidado tu información de inicio de sesión? <a href="#"><strong>Obtén ayuda.</strong></a></p>
       </div>
     </div><!--fin iniciar sesión botón -->
@@ -53,7 +73,7 @@
 
     <div class="row"><!--inicio sesión facebook-->
       <div class="col-xs-12">
-        <button class="facebook"><i class="fab fa-facebook-square"></i> Iniciar sesión con Facebook</button>
+        <button class="facebook" id="signIn-facebook"><i class="fab fa-facebook-square"></i> Iniciar sesión con Facebook</button>
       </div>
     </div><!--fin inicio sesión facebook-->
   </section>
@@ -65,8 +85,12 @@
     </div>
   </footer>
   
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--Google Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/index.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
