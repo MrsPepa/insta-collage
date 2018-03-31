@@ -5,30 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
   <title>Insta collage</title>
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body id="home">
-  <!--firebase SDK-->
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId: '753020794889244',
-      cookie: true,
-      xfbml: true,
-      version: 'v2.12'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
 
   <section class="container">
     <div class="row"><!--seleccion de idioma-->
@@ -73,11 +54,14 @@
 
     <div class="row"><!--inicio sesión facebook-->
       <div class="col-xs-12">
-        <button class="facebook" id="signIn-facebook"><i class="fab fa-facebook-square"></i> Iniciar sesión con Facebook</button>
+        <button class="facebook" id="signIn-facebook" onclick="ingresar()"><i class="fab fa-facebook-square"></i> Iniciar sesión con Facebook</button>
+        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile, email" onlogin="checkLoginState()"></div>
       </div>
     </div><!--fin inicio sesión facebook-->
+    <div id="log"></div>
+    <div id="status"></div>
   </section>
-<footer id="registrar">
+  <footer id="registrar">
     <div class="row">
       <div class="col-xs-12">
         <p>¿No tienes una cuenta? <a href="#"><strong>Regístrate.</strong></a></p>
@@ -85,13 +69,17 @@
     </div>
   </footer>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     <!--Google Firebase-->
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
 
-  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
   <script src="assets/js/index.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
