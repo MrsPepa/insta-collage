@@ -1,56 +1,23 @@
 //Home LOG IN
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAXN4jfXwIpZvJPd_imoGPrGkvYbj338qI",
-    authDomain: "insta-collage-b5b47.firebaseapp.com",
-    databaseURL: "https://insta-collage-b5b47.firebaseio.com",
-    projectId: "insta-collage-b5b47",
-    storageBucket: "insta-collage-b5b47.appspot.com",
-    messagingSenderId: "1086065309668"
-  };
-  firebase.initializeApp(config);
 
+  //login google
+  $(document).ready(() => {
+    //inicio con facebook
+    let $loginGoogle = $('#signIn-google');
+    $loginGoogle.on('click', googleLogin);
 
-  //LOG IN FACEBOOK
+    function googleLogin() {
+      let provider = new firebase.auth.GoogleAuthProvider();
 
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '753020794889244',
-      cookie     : true,  // enable cookies to allow the server to access 
-                          // the session
-      xfbml      : true,  // parse social plugins on this page
-      version    : 'v2.12' // use graph api version 2.8
-    });
-  };
-// Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.12&appId=753020794889244&autoLogAppEvents=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-  function validarUsuario() {
-    FB.getLoginStatus(function(response) {
-      if(response.status == 'connected') {
-        FB.api('/me', function(response){
-          alert('Hola ' + response.name);
-        });
-      } else if(response.status == 'not_authorized') {
-        alert('Debes autorizar la app!');
-      } else {
-        alert('Debes ingresar a tu cuenta de Facebook!');
-      }
-    });
-  }
-
-  function ingresar() {
-    FB.login(function(response){
-      validarUsuario();
-    }, {scope: 'public_profile, email'});
-  }
-
+      firebase.auth().signInWithPopup(provider).then((result) => {
+        // The signed-in user info.
+        let user = result.user;
+        // Mostramos su contenido
+        console.log(user);
+        window.location.assign('../../collage.html');
+      });
+    }
+  })
 
 
 //Iniciando collage y acceso de imagenes

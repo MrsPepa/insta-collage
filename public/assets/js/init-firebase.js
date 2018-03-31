@@ -1,4 +1,4 @@
-/*$(document).ready(() => {
+$(document).ready(() => {
   // Initialize Firebase
   let config = {
     apiKey: "AIzaSyAXN4jfXwIpZvJPd_imoGPrGkvYbj338qI",
@@ -10,7 +10,7 @@
   };
   firebase.initializeApp(config);
 });
-
+/*
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAXN4jfXwIpZvJPd_imoGPrGkvYbj338qI",
@@ -67,4 +67,6 @@
             console.log("not logged in");
         }
     });
-  }*/
+  }
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile, email" onlogin="checkLoginState()"></div>
+  */
