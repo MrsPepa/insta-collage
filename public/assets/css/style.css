@@ -110,6 +110,16 @@ background: -o-linear-gradient(bottom right, teal, violet); /* For Opera 11.1 to
 background: -moz-linear-gradient(bottom right, teal, violet); /* For Firefox 3.6 to 15 */
 background: linear-gradient(to bottom right, teal , violet); /* Standard syntax */
 }
+#home2 {
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  font-weight: normal;
+  background: -webkit-linear-gradient(left top, teal , violet); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(bottom right, teal, violet); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(bottom right, teal, violet); /* For Firefox 3.6 to 15 */
+background: linear-gradient(to bottom right, teal , violet); /* Standard syntax */
+}
 /*selector de idioma*/
 #select {
   background-color: transparent;
@@ -128,10 +138,8 @@ background: linear-gradient(to bottom right, teal , violet); /* Standard syntax 
   margin-top: 3em;
 }
 /*input's y boton*/
-.ingresar {
 
-}
-#user,
+#email,
 #password {
   width: 100%;
   height: 3em;
@@ -164,7 +172,7 @@ background: linear-gradient(to bottom right, teal , violet); /* Standard syntax 
   color: #fff;
   font-weight: 700;
   border: 1px solid #fff;
-  background-color: rgba(0,0,0,0);
+  background-color: violet;
   outline: none;
   border-radius: 6px;
 }
@@ -180,7 +188,10 @@ background: linear-gradient(to bottom right, teal , violet); /* Standard syntax 
   font-size: 16px;
 }
 /*estilo input*/
-::-webkit-input-placeholder {
+::placeholder {
+  color: teal;
+};
+.input-group::-webkit-input-placeholder {
   color: #fff;
   opacity: 0.7;
 }
